@@ -79,19 +79,36 @@
 				}
 			}
 		</style>
+
+		<script is:inline>
+			const repoBase = window.location.hostname.endsWith('github.io')
+				? '/personal-website/'
+				: '/';
+
+			window.addEventListener('DOMContentLoaded', () => {
+				document.querySelectorAll('a[data-page]').forEach((link) => {
+					const page = link.getAttribute('data-page');
+					if (page === 'home') {
+						link.setAttribute('href', repoBase);
+					} else if (page) {
+						link.setAttribute('href', repoBase + page);
+					}
+				});
+			});
+		</script>
 	</head>
 
 	<body>
 		<header class="site-header">
 			<nav class="nav">
-				<a class="brand" href="./index.html">汪宸</a>
+				<a class="brand" data-page="home" href="/">汪宸</a>
 				<div class="nav-links">
-					<a href="./research.html">研究</a>
-					<a href="./writing.html">写作</a>
-					<a href="./projects.html">项目</a>
-					<a href="./about.html">关于</a>
+					<a data-page="research.html" href="/research.html">研究</a>
+					<a data-page="writing.html" href="/writing.html">写作</a>
+					<a data-page="projects.html" href="/projects.html">项目</a>
+					<a data-page="about.html" href="/about.html">关于</a>
 					<a href="https://github.com/Andrea-Wang" target="_blank" rel="noopener noreferrer">GitHub</a>
-					<a href="./cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+					<a data-page="cv.pdf" href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
 				</div>
 			</nav>
 		</header>
