@@ -2,9 +2,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://wangchenlab.com',
+  site: 'https://andrea-wang.github.io',
+  base: '/personal-website',
   trailingSlash: 'never',
-  build: {
-    format: 'file',
-  },
+  build: { format: 'file' },
 });
