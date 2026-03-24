@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const base = import.meta.env.BASE_URL;
 ---
 
 <Layout>
@@ -19,9 +18,9 @@ const base = import.meta.env.BASE_URL;
       </p>
 
       <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-        <a href={`${base}research/`} style="padding: 0.75rem 1.1rem; border: 1px solid #222; text-decoration: none; color: #111;">研究</a>
-        <a href={`${base}writing/`} style="padding: 0.75rem 1.1rem; border: 1px solid #222; text-decoration: none; color: #111;">写作</a>
-        <a href={`${base}projects/`} style="padding: 0.75rem 1.1rem; border: 1px solid #222; text-decoration: none; color: #111;">项目</a>
+        <a href="https://wangchenlab.com/research/" style="padding: 0.75rem 1.1rem; border: 1px solid #222; text-decoration: none; color: #111;">研究</a>
+        <a href="https://wangchenlab.com/writing/" style="padding: 0.75rem 1.1rem; border: 1px solid #222; text-decoration: none; color: #111;">写作</a>
+        <a href="https://wangchenlab.com/projects/" style="padding: 0.75rem 1.1rem; border: 1px solid #222; text-decoration: none; color: #111;">项目</a>
       </div>
     </section>
 
@@ -31,7 +30,7 @@ const base = import.meta.env.BASE_URL;
         <p style="margin-bottom: 0.75rem;">
           这里整理我的研究方向、当前工作、论文成果以及相关方法与工具。
         </p>
-        <a href={`${base}research/`} style="color: #111;">查看研究 →</a>
+        <a href="https://wangchenlab.com/research/" style="color: #111;">查看研究 →</a>
       </div>
 
       <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
@@ -39,7 +38,7 @@ const base = import.meta.env.BASE_URL;
         <p style="margin-bottom: 0.75rem;">
           我正在持续创作长篇小说《阳界纪元》，这里也会收录相关的设定、札记与作品入口。
         </p>
-        <a href={`${base}writing/`} style="color: #111;">查看写作 →</a>
+        <a href="https://wangchenlab.com/writing/" style="color: #111;">查看写作 →</a>
       </div>
 
       <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
@@ -47,7 +46,7 @@ const base = import.meta.env.BASE_URL;
         <p style="margin-bottom: 0.75rem;">
           这里展示我开发的开源工具、科研脚本以及与科学计算相关的实验性项目。
         </p>
-        <a href={`${base}projects/`} style="color: #111;">查看项目 →</a>
+        <a href="https://wangchenlab.com/projects/" style="color: #111;">查看项目 →</a>
       </div>
     </section>
   </main>
