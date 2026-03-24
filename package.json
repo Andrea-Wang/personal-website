@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "personal-website",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -7,11 +7,16 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "deploy": "gh-pages -d dist",
     "astro": "astro"
   },
   "dependencies": {
     "astro": "^6.0.8"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
