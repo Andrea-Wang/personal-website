@@ -1,11 +1,54 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <main style="max-width: 860px; margin: 0 auto; padding: 4rem 1.5rem 6rem; line-height: 1.8;">
+    <section style="margin-bottom: 4rem;">
+      <p style="font-size: 0.95rem; color: #666; margin-bottom: 0.75rem;">个人主页</p>
+      <h1 style="font-size: 3rem; line-height: 1.1; margin: 0 0 1rem;">汪宸</h1>
+      <p style="font-size: 1.2rem; color: #333; max-width: 700px; margin-bottom: 1.5rem;">
+        Chen Wang · 材料学博士在读
+      </p>
+      <p style="max-width: 760px; color: #444; margin-bottom: 2rem;">
+        我目前的研究兴趣包括高分子化学、光聚合反应、化学发光、Orbitrap 质谱、
+        生命起源相关化学问题，以及计算化学与科学数据分析。
+        我的研究工作涉及化学发光诱导阳离子光聚合等方向，
+        目前也在持续推进新的预印本工作。
+        除科研之外，我也长期进行小说创作，并开发开源工具。
+      </p>
+
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="/research" style="padding: 0.75rem 1.1rem; border: 1px solid #222; text-decoration: none; color: #111;">研究</a>
+        <a href="/writing" style="padding: 0.75rem 1.1rem; border: 1px solid #222; text-decoration: none; color: #111;">写作</a>
+        <a href="/projects" style="padding: 0.75rem 1.1rem; border: 1px solid #222; text-decoration: none; color: #111;">项目</a>
+      </div>
+    </section>
+
+    <section style="display: grid; gap: 1.5rem;">
+      <div style="padding: 1.5rem; border: 1px solid #ddd;">
+        <h2 style="margin-top: 0;">研究</h2>
+        <p style="margin-bottom: 0.75rem;">
+          这里整理我的研究方向、当前工作、论文成果以及相关方法与工具。
+        </p>
+        <a href="/research" style="color: #111;">查看研究 →</a>
+      </div>
+
+      <div style="padding: 1.5rem; border: 1px solid #ddd;">
+        <h2 style="margin-top: 0;">写作</h2>
+        <p style="margin-bottom: 0.75rem;">
+          我正在持续创作长篇小说《阳界纪元》，这里也会收录相关的设定、札记与作品入口。
+        </p>
+        <a href="/writing" style="color: #111;">查看写作 →</a>
+      </div>
+
+      <div style="padding: 1.5rem; border: 1px solid #ddd;">
+        <h2 style="margin-top: 0;">项目</h2>
+        <p style="margin-bottom: 0.75rem;">
+          这里展示我开发的开源工具、科研脚本以及与科学计算相关的实验性项目。
+        </p>
+        <a href="/projects" style="color: #111;">查看项目 →</a>
+      </div>
+    </section>
+  </main>
 </Layout>
