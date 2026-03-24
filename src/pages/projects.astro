@@ -1,45 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const base = import.meta.env.BASE_URL;
 ---
 
 <Layout>
   <main style="max-width: 860px; margin: 0 auto; padding: 4rem 1.5rem 6rem; line-height: 1.8;">
-    <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">关于</h1>
+    <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">项目</h1>
     <p style="color: #444; max-width: 760px; margin-bottom: 2rem;">
-      这里简要介绍我的研究背景、学术兴趣以及写作与项目方向。
+      这里展示我的开源工具、科研脚本以及与科学计算相关的项目。
     </p>
 
     <section style="display: grid; gap: 1.5rem;">
       <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
-        <h2 style="margin-top: 0;">基本信息</h2>
-        <p><strong>中文名：</strong>汪宸</p>
-        <p><strong>英文名：</strong>Chen Wang</p>
-        <p><strong>学位目标：</strong>Dr. rer. nat.</p>
-        <p><strong>当前状态：</strong>材料学博士在读</p>
-      </div>
-
-      <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
-        <h2 style="margin-top: 0;">研究兴趣</h2>
+        <h2 style="margin-top: 0;">开源工具</h2>
         <p>
-          我的研究兴趣包括高分子化学、光聚合反应、化学发光、Orbitrap 质谱、
-          生命起源相关化学问题，以及计算化学与科学数据分析。
+          这里之后可以补充 GitHub 项目、工具简介、功能说明与链接。
         </p>
       </div>
 
       <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
-        <h2 style="margin-top: 0;">写作与项目</h2>
+        <h2 style="margin-top: 0;">科研脚本</h2>
         <p>
-          除科研之外，我也长期进行小说创作，目前正在持续写作《阳界纪元》。
-          此外，我也开发和整理开源工具、科研脚本以及与科学计算相关的项目。
+          这里之后可以整理你用于数据处理、自动化分析和计算工作的脚本。
         </p>
       </div>
 
       <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
-        <h2 style="margin-top: 0;">联系方式</h2>
-        <p><strong>GitHub：</strong><a href="https://github.com/Andrea-Wang" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">Andrea-Wang</a></p>
-        <p><strong>CV：</strong><a href={`${base}cv.pdf`} target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">下载简历</a></p>
-        <p><strong>Email：</strong>chen.wang@uni-leipzig.de</p>
+        <h2 style="margin-top: 0;">实验性项目</h2>
+        <p>
+          这里之后可以放你与科学计算、自动化分析、写作辅助或个人工具相关的实验性项目。
+        </p>
       </div>
     </section>
   </main>
