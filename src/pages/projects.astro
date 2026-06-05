@@ -3,33 +3,33 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <main style="max-width: 860px; margin: 0 auto; padding: 4rem 1.5rem 6rem; line-height: 1.85;">
+  <main class="page-main">
     <section style="margin-bottom: 3rem;">
-      <h1 style="font-size: 2.8rem; line-height: 1.15; margin: 0 0 1rem;">项目</h1>
-      <p style="max-width: 760px; color: #444; margin: 0;">
+      <h1 style="font-size: 2.8rem; font-weight: 800; line-height: 1.1; margin: 0 0 1rem; letter-spacing: -0.03em;">项目</h1>
+      <p style="max-width: 680px; color: #6b7280; margin: 0; font-size: 1rem;">
         这里展示我的开源工具、科研脚本以及与科学计算相关的项目。
       </p>
     </section>
 
-    <section style="display: grid; gap: 1.5rem;">
-      <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
-        <h2 style="margin-top: 0;">开源工具</h2>
-        <p style="margin-bottom: 0;">
+    <section style="display: grid; gap: 1.25rem;">
+      <div class="card">
+        <h2>开源工具</h2>
+        <p style="margin-bottom: 0; color: #6b7280;">
           这里之后可以补充 GitHub 项目、工具简介、功能说明与链接。
         </p>
       </div>
 
-      <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
-        <h2 style="margin-top: 0;">科研脚本</h2>
-        <p style="margin-bottom: 0;">
-          这里之后可以整理你用于数据处理、自动化分析和计算工作的脚本。
+      <div class="card">
+        <h2>科研脚本</h2>
+        <p style="margin-bottom: 0; color: #6b7280;">
+          这里之后可以整理用于数据处理、自动化分析和计算工作的脚本。
         </p>
       </div>
 
-      <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
-        <h2 style="margin-top: 0;">实验性项目</h2>
-        <p style="margin-bottom: 0;">
-          这里之后可以放你与科学计算、自动化分析、写作辅助或个人工具相关的实验性项目。
+      <div class="card">
+        <h2>实验性项目</h2>
+        <p style="margin-bottom: 0; color: #6b7280;">
+          这里之后可以放与科学计算、自动化分析、写作辅助或个人工具相关的实验性项目。
         </p>
       </div>
     </section>

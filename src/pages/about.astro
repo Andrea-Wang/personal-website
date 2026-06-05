@@ -3,51 +3,85 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <main style="max-width: 860px; margin: 0 auto; padding: 4rem 1.5rem 6rem; line-height: 1.85;">
+  <main class="page-main">
     <section style="margin-bottom: 3rem;">
-      <h1 style="font-size: 2.8rem; line-height: 1.15; margin: 0 0 1rem;">关于</h1>
-      <p style="max-width: 760px; color: #444; margin: 0;">
-        我目前在莱比锡大学攻读博士学位，研究兴趣包括高分子化学、光聚合反应、
-        化学发光、Orbitrap 质谱、生命起源相关化学问题，以及计算化学与科学数据分析。
-        除科研之外，我也持续进行小说创作，并整理与科研相关的开源工具和脚本。
+      <h1 style="font-size: 2.8rem; font-weight: 800; line-height: 1.1; margin: 0 0 1rem; letter-spacing: -0.03em;">关于</h1>
+      <p style="max-width: 680px; color: #6b7280; margin: 0; font-size: 1rem;">
+        化学博士生，莱比锡大学，研究方向为质谱、光化学与生命信号分析。
+        同时从事长篇幻想小说创作与开源项目开发。
       </p>
     </section>
 
-    <section style="display: grid; gap: 1.5rem;">
-      <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
-        <h2 style="margin-top: 0;">教育经历</h2>
-        <p><strong>2013–2017</strong>　江南大学　本科</p>
-        <p><strong>2018–2021</strong>　江南大学　硕士</p>
-        <p style="margin-bottom: 0;"><strong>2022–今</strong>　莱比锡大学　博士在读</p>
+    <section style="display: grid; gap: 1.25rem;">
+
+      <div class="card">
+        <h2>教育经历</h2>
+        <div style="display:grid; gap:0.75rem;">
+          <div style="display:flex; gap:1.25rem; align-items:baseline;">
+            <span style="color:#6b7280; font-size:0.85rem; white-space:nowrap; font-variant-numeric:tabular-nums; min-width:5.5rem;">2013–2017</span>
+            <div>
+              <div style="font-weight:500;">江南大学</div>
+              <div style="font-size:0.88rem; color:#6b7280;">高分子材料与工程 · 学士</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:1.25rem; align-items:baseline;">
+            <span style="color:#6b7280; font-size:0.85rem; white-space:nowrap; font-variant-numeric:tabular-nums; min-width:5.5rem;">2018–2021</span>
+            <div>
+              <div style="font-weight:500;">江南大学</div>
+              <div style="font-size:0.88rem; color:#6b7280;">材料工程 · 硕士</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:1.25rem; align-items:baseline;">
+            <span style="color:#6b7280; font-size:0.85rem; white-space:nowrap; font-variant-numeric:tabular-nums; min-width:5.5rem;">2022–今</span>
+            <div>
+              <div style="font-weight:500;">莱比锡大学</div>
+              <div style="font-size:0.88rem; color:#6b7280;">化学 · 博士在读 · 导师：Prof. Bernd Abel</div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
-        <h2 style="margin-top: 0;">研究兴趣</h2>
-        <p style="margin-bottom: 0;">
-          我的研究兴趣包括高分子化学、光聚合反应、化学发光、Orbitrap 质谱、
-          生命起源相关化学问题，以及计算化学与科学数据分析。
+      <div class="card">
+        <h2>研究兴趣</h2>
+        <p style="margin-bottom: 0; font-size:0.93rem;">
+          Orbitrap 高分辨质谱；碰撞诱导解离碎裂；撞击型 TOF-MS；
+          土卫二（卡西尼-惠更斯号）生命信号分析；SELINA 平台设计；
+          微流控芯片；化学发光诱导光聚合；Python 质谱数据分析；量子化学计算（ORCA）。
         </p>
       </div>
 
-      <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
-        <h2 style="margin-top: 0;">写作与项目</h2>
-        <p style="margin-bottom: 0;">
-          除科研之外，我也长期进行小说创作，目前正在持续写作《阳界纪元》。
-          此外，我也开发和整理开源工具、科研脚本以及与科学计算相关的项目。
+      <div class="card">
+        <h2>写作与项目</h2>
+        <p style="margin-bottom: 0; font-size:0.93rem;">
+          长期进行长篇幻想小说创作，目前正在写作《阳界：阿斯提摩斯》。
+          同时开发科研相关开源工具与脚本。
         </p>
       </div>
 
-      <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
-        <h2 style="margin-top: 0;">联系方式</h2>
-        <p><strong>Academic Email：</strong>chen.wang@uni-leipzig.de</p>
-        <p><strong>General Email：</strong>andreawc96@gmail.com</p>
-        <p style="margin-bottom: 0;">
-          <strong>GitHub：</strong>
-          <a href="https://github.com/Andrea-Wang" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">
-            Andrea-Wang
-          </a>
-        </p>
+      <div class="card">
+        <h2>联系</h2>
+        <div style="display:flex; align-items:center; gap:0.5rem; font-size:0.95rem;">
+          <span style="color:#6b7280;">GitHub</span>
+          <a href="https://github.com/Andrea-Wang" target="_blank" rel="noopener noreferrer" style="color:#6366f1; font-weight:500;">Andrea-Wang ↗</a>
+        </div>
       </div>
+
+      <div class="card" style="padding:0; overflow:hidden;">
+        <div style="padding:1.25rem 1.75rem; border-bottom:1px solid rgba(0,0,0,0.06);">
+          <h2 style="margin:0;">CV</h2>
+        </div>
+        <div style="padding:1rem;">
+          <iframe
+            src="/cv/CV_Chen_Wang_2026_CN.pdf"
+            style="width:100%; height:880px; border:none; border-radius:0.5rem; display:block;"
+            title="CV – Chen Wang"
+          ></iframe>
+          <p style="margin:0.75rem 0 0; font-size:0.8rem; color:#9ca3af; text-align:center;">
+            如 PDF 未能加载，请尝试在桌面端浏览器访问。
+          </p>
+        </div>
+      </div>
+
     </section>
   </main>
 </Layout>

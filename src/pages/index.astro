@@ -3,52 +3,54 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <main style="max-width: 860px; margin: 0 auto; padding: 4rem 1.5rem 6rem; line-height: 1.8;">
-    <section style="margin-bottom: 4rem;">
-      <p style="font-size: 0.95rem; color: #666; margin-bottom: 0.75rem;">个人主页</p>
-      <h1 style="font-size: 3rem; line-height: 1.1; margin: 0 0 1rem;">汪宸</h1>
-      <p style="font-size: 1.2rem; color: #333; max-width: 700px; margin-bottom: 1.5rem;">
-        Chen Wang · 材料学博士在读
-      </p>
-      <p style="max-width: 760px; color: #444; margin-bottom: 2rem;">
-        我目前的研究兴趣包括高分子化学、光聚合反应、化学发光、Orbitrap 质谱、
-        生命起源相关化学问题，以及计算化学与科学数据分析。
-        我的研究工作涉及化学发光诱导阳离子光聚合等方向，目前也在持续推进新的预印本工作。
-        除科研之外，我也长期进行小说创作，并开发开源工具。
+  <main class="page-main">
+
+    <section style="margin-bottom: 4.5rem;">
+      <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.35rem 0.9rem; background:rgba(99,102,241,0.10); border:1px solid rgba(99,102,241,0.18); border-radius:9999px; font-size:0.8rem; font-weight:500; color:#6366f1; margin-bottom:1.5rem; letter-spacing:0.01em;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#6366f1;display:inline-block;box-shadow:0 0 0 2px rgba(99,102,241,0.25);"></span>
+        Ph.D. Candidate · Universität Leipzig
+      </div>
+
+      <h1 style="font-size: clamp(2.8rem, 7vw, 4rem); font-weight: 800; line-height: 1.05; margin: 0 0 0.4rem; letter-spacing: -0.03em;">汪宸</h1>
+      <p style="font-size: 1.25rem; color: #6b7280; font-weight: 400; margin: 0 0 1.5rem; letter-spacing: 0.01em;">Chen Wang</p>
+
+      <p style="max-width: 680px; color: #374151; font-size: 1.02rem; line-height: 1.85; margin-bottom: 2.25rem;">
+        我的研究兴趣包括高分子化学、光聚合反应、化学发光、Orbitrap 质谱与生命起源相关化学问题。
+        除科研之外，我也长期进行小说创作，并开发开源工具与科研脚本。
       </p>
 
-      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-        <a href="/research/" style="padding: 0.75rem 1.1rem; border: 1px solid #222; text-decoration: none; color: #111;">研究</a>
-        <a href="/writing/" style="padding: 0.75rem 1.1rem; border: 1px solid #222; text-decoration: none; color: #111;">写作</a>
-        <a href="/projects/" style="padding: 0.75rem 1.1rem; border: 1px solid #222; text-decoration: none; color: #111;">项目</a>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
+        <a href="/research/" class="btn-primary">研究 →</a>
+        <a href="https://github.com/Andrea-Wang" class="btn-secondary" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="/about/" class="btn-secondary">关于我</a>
       </div>
     </section>
 
-    <section style="display: grid; gap: 1.5rem;">
-      <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
-        <h2 style="margin-top: 0;">研究</h2>
-        <p style="margin-bottom: 0.75rem;">
-          这里整理我的研究方向、当前工作、论文成果以及相关方法与工具。
+    <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+      <a href="/research/" class="card" style="text-decoration:none; color:inherit; display:block;">
+        <div style="width:2rem;height:2rem;border-radius:0.6rem;background:rgba(99,102,241,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1rem;">⚗️</div>
+        <h2>研究</h2>
+        <p style="margin:0; font-size:0.92rem; color:#6b7280; line-height:1.75;">
+          高分子化学、光聚合、化学发光与 Orbitrap 质谱。整理研究成果与当前工作。
         </p>
-        <a href="/research/" style="color: #111;">查看研究 →</a>
-      </div>
+      </a>
 
-      <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
-        <h2 style="margin-top: 0;">写作</h2>
-        <p style="margin-bottom: 0.75rem;">
-          《阳界纪元》是一部长篇幻想小说，建立在阳界与阴界相互对应的双界结构之上。
-          这里会持续整理作品简介、设定资料与阅读入口。
+      <a href="/writing/" class="card" style="text-decoration:none; color:inherit; display:block;">
+        <div style="width:2rem;height:2rem;border-radius:0.6rem;background:rgba(168,85,247,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1rem;">📖</div>
+        <h2>写作</h2>
+        <p style="margin:0; font-size:0.92rem; color:#6b7280; line-height:1.75;">
+          长篇幻想小说《阳界：阿斯提摩斯》，建立在阳界与阴界相互对应的双界结构之上。
         </p>
-        <a href="/writing/" style="color: #111;">查看写作 →</a>
-      </div>
+      </a>
 
-      <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
-        <h2 style="margin-top: 0;">项目</h2>
-        <p style="margin-bottom: 0.75rem;">
-          这里展示我开发的开源工具、科研脚本以及与科学计算相关的实验性项目。
+      <a href="/projects/" class="card" style="text-decoration:none; color:inherit; display:block;">
+        <div style="width:2rem;height:2rem;border-radius:0.6rem;background:rgba(56,189,248,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1rem;">🔧</div>
+        <h2>项目</h2>
+        <p style="margin:0; font-size:0.92rem; color:#6b7280; line-height:1.75;">
+          开源工具、科研脚本与科学计算相关的实验性项目。
         </p>
-        <a href="/projects/" style="color: #111;">查看项目 →</a>
-      </div>
+      </a>
     </section>
+
   </main>
 </Layout>

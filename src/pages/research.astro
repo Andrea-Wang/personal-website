@@ -3,76 +3,110 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <main style="max-width: 860px; margin: 0 auto; padding: 4rem 1.5rem 6rem; line-height: 1.85;">
+  <main class="page-main">
     <section style="margin-bottom: 3rem;">
-      <h1 style="font-size: 2.8rem; line-height: 1.15; margin: 0 0 1rem;">研究</h1>
-      <p style="max-width: 760px; color: #444; margin: 0;">
-        这里整理我的研究兴趣、当前工作、论文与预印本，以及我在研究中使用的方法与工具。
+      <h1 style="font-size: 2.8rem; font-weight: 800; line-height: 1.1; margin: 0 0 1rem; letter-spacing: -0.03em;">研究</h1>
+      <p style="max-width: 680px; color: #6b7280; margin: 0; font-size: 1rem;">
+        这里整理我的研究兴趣、当前工作、发表论文以及使用的方法与工具。
       </p>
     </section>
 
-    <section style="display: grid; gap: 1.5rem;">
-      <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
-        <h2 style="margin-top: 0;">研究兴趣</h2>
-        <p style="margin-bottom: 0;">
-          我的研究兴趣包括高分子化学、光聚合反应、化学发光、Orbitrap 质谱、
-          生命起源相关化学问题，以及计算化学与科学数据分析。
-        </p>
-      </div>
+    <section style="display: grid; gap: 1.25rem;">
 
-      <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
-        <h2 style="margin-top: 0;">当前工作</h2>
-        <p style="margin-bottom: 0;">
-          我目前关注化学与材料科学交叉问题，并持续开展与质谱、计算化学、
-          科学数据分析相关的研究与方法探索。同时，我也重视科研流程中的自动化处理、
-          数据整理与结果复现。
-        </p>
-      </div>
-
-      <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
-        <h2 style="margin-top: 0;">论文与预印本</h2>
-
-        <div style="margin-bottom: 1.75rem;">
-          <h3 style="margin: 0 0 0.75rem; font-size: 1.15rem;">代表论文</h3>
-          <div style="padding: 1rem 1.1rem; border: 1px solid #e5e5e5; background: #fafafa;">
-            <p style="margin: 0 0 0.4rem;">
-              <strong>Chemiluminescence induced cationic photopolymerization using sulfonium salt</strong>
-            </p>
-            <p style="margin: 0; color: #555;">
-              Wang C, Meng X, Li Z, et al. <em>ACS Macro Letters</em>, 2020, 9(4): 471-475.
-            </p>
+      <div class="card">
+        <h2>研究兴趣</h2>
+        <div style="display: grid; gap: 1rem;">
+          <div>
+            <h3 style="margin:0 0 0.35rem; font-size:0.85rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#6366f1;">质谱与仪器分析</h3>
+            <p style="margin:0; font-size:0.93rem;">Orbitrap 高分辨质谱；碰撞诱导解离碎裂机理；撞击型 TOF-MS 实验与数据分析；SELINA 撞击电离平台设计与组装；生物分子碎片图谱鉴定；面向海洋世界的生物标志物预测与检测。</p>
           </div>
-        </div>
-
-        <div>
-          <h3 style="margin: 0 0 0.75rem; font-size: 1.15rem;">预印本</h3>
-          <div style="padding: 1rem 1.1rem; border: 1px solid #e5e5e5; background: #fafafa;">
-            <p style="margin: 0 0 0.5rem;">
-              新的预印本工作正在推进中。
-            </p>
-            <p style="margin: 0;">
-              <a
-                href="https://www.researchsquare.com/article/rs-8855497/v1"
-                target="_blank"
-                rel="noopener noreferrer"
-                style="text-decoration: underline;"
-              >
-                Research Square 页面
-              </a>
-            </p>
+          <div>
+            <h3 style="margin:0 0 0.35rem; font-size:0.85rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#6366f1;">微流控与器件制造</h3>
+            <p style="margin:0; font-size:0.93rem;">微流控芯片设计与加工；DLP、FDM 等 3D 打印技术；化学发光微流控体系的构建。</p>
+          </div>
+          <div>
+            <h3 style="margin:0 0 0.35rem; font-size:0.85rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#6366f1;">数据分析与计算化学</h3>
+            <p style="margin:0; font-size:0.93rem;">基于 Python 的 MS/MS 数据自动化处理与可视化；基于 ORCA 的量子化学计算；键解离能与分子碎裂分析。</p>
+          </div>
+          <div>
+            <h3 style="margin:0 0 0.35rem; font-size:0.85rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#6366f1;">材料与光化学</h3>
+            <p style="margin:0; font-size:0.93rem;">高分子化学；光固化与光聚合体系；化学发光诱导光聚合；双光子光刻；化学镀金属图案化。</p>
           </div>
         </div>
       </div>
 
-      <div style="padding: 1.5rem; border: 1px solid #ddd; background: #fff;">
-        <h2 style="margin-top: 0;">方法与工具</h2>
-        <ul style="margin: 0; padding-left: 1.2rem;">
-          <li>Orbitrap 质谱相关实验与数据分析</li>
-          <li>计算化学与分子建模</li>
-          <li>Python 数据处理与科研自动化</li>
-          <li>科研绘图与结果整理</li>
+      <div class="card">
+        <h2>当前工作</h2>
+        <p style="margin-bottom: 0.75rem;">
+          博士阶段在莱比锡大学 Bernd Abel 课题组，主要开展以下方向的研究：
+        </p>
+        <ul style="margin: 0; padding-left: 1.2rem; display:grid; gap:0.4rem; font-size:0.93rem;">
+          <li>高分辨率 Orbitrap 质谱撞击诱导碎裂与碎片图谱分析</li>
+          <li>撞击型飞行时间质谱（TOF-MS）实验</li>
+          <li>土卫二（卡西尼-惠更斯号）相关生命信号分析</li>
+          <li>撞击粒子实验平台 SELINA 的设计与组装</li>
+          <li>2023–2024 年在莱布尼兹表面改性研究所（IOM）访问期间参与化学发光微流控体系研究</li>
         </ul>
       </div>
+
+      <div class="card">
+        <h2>发表论文</h2>
+        <p style="margin:0 0 1.25rem; font-size:0.88rem; color:#9ca3af;">硕士期间</p>
+
+        <div style="display:grid; gap:0.85rem;">
+          <div style="padding: 1rem 1.15rem; background: rgba(99,102,241,0.05); border: 1px solid rgba(99,102,241,0.12); border-radius: 0.75rem;">
+            <p style="margin: 0 0 0.3rem; font-weight: 600; font-size: 0.93rem; line-height:1.5;">
+              Chemiluminescence Induced Cationic Photopolymerization Using Sulfonium Salt
+            </p>
+            <p style="margin: 0; color: #6b7280; font-size: 0.84rem; line-height:1.6;">
+              <strong style="color:#374151;">Wang C.</strong>, Meng X., Li Z., Li M., Jin M., Liu R., Yagci Y.
+              <br /><em>ACS Macro Letters</em>, 2020, 9(4), 471–475.
+            </p>
+          </div>
+
+          <div style="padding: 1rem 1.15rem; background: rgba(99,102,241,0.05); border: 1px solid rgba(99,102,241,0.12); border-radius: 0.75rem;">
+            <p style="margin: 0 0 0.3rem; font-weight: 600; font-size: 0.93rem; line-height:1.5;">
+              Thiol-ene-acrylate Ternary Photosensitive Resins for DLP 3D Printing
+            </p>
+            <p style="margin: 0; color: #6b7280; font-size: 0.84rem; line-height:1.6;">
+              <strong style="color:#374151;">Wang C.</strong>, Wang C., Li Z.
+              <br /><em>Journal of Photopolymer Science and Technology</em>, 2020, 33(3), 285–290.
+            </p>
+          </div>
+
+          <div style="padding: 1rem 1.15rem; background: rgba(99,102,241,0.05); border: 1px solid rgba(99,102,241,0.12); border-radius: 0.75rem;">
+            <p style="margin: 0 0 0.3rem; font-weight: 600; font-size: 0.93rem; line-height:1.5;">
+              Near-infrared Light induced Cationic Polymerization based on Upconversion and Ferrocenium Photochemistry
+            </p>
+            <p style="margin: 0; color: #6b7280; font-size: 0.84rem; line-height:1.6;">
+              Meng X., Lu H., Li Z., <strong style="color:#374151;">Wang C.</strong>, Liu R., Guan X., Yagci Y.
+              <br /><em>Polymer Chemistry</em>, 2019, 10(41), 5574–5577.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>方法与工具</h2>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.5rem 1.5rem;">
+          {[
+            'Orbitrap 高分辨质谱',
+            '撞击型 TOF-MS',
+            'Python MS/MS 数据处理',
+            'ORCA 量子化学计算',
+            'DLP / FDM 3D 打印',
+            '微流控芯片制造',
+            '科研绘图与统计分析',
+            '光聚合体系与光化学',
+          ].map(item => (
+            <div style="display:flex; align-items:center; gap:0.5rem; font-size:0.88rem; color:#374151; padding:0.4rem 0; border-bottom:1px solid rgba(0,0,0,0.05);">
+              <span style="width:5px;height:5px;border-radius:50%;background:#6366f1;flex-shrink:0;"></span>
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+
     </section>
   </main>
 </Layout>
