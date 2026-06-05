@@ -6,12 +6,9 @@ import Layout from '../layouts/Layout.astro';
   <main class="page-main">
     <section style="margin-bottom: 3rem;">
       <h1 style="font-size: 2.8rem; font-weight: 800; line-height: 1.1; margin: 0 0 1rem; letter-spacing: -0.03em;">写作</h1>
-      <p style="max-width: 680px; color: #6b7280; margin: 0; font-size: 1rem;">
-        这里整理长篇幻想小说《阳界：阿斯提摩斯》的相关设定与创作资料。
-      </p>
     </section>
 
-    <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
+    <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 3rem;">
       <a href="/writing/lore/" class="card" style="text-decoration:none; color:inherit; display:block;">
         <div style="width:2rem;height:2rem;border-radius:0.6rem;background:rgba(99,102,241,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:0.9rem;font-size:1rem;">📚</div>
         <h2 style="margin-bottom:0.4rem;">设定集</h2>
@@ -24,103 +21,51 @@ import Layout from '../layouts/Layout.astro';
       </a>
     </section>
 
-    <section style="display: grid; gap: 1.25rem;">
-      <div class="card">
-        <h2>《阳界：阿斯提摩斯》</h2>
-        <div style="display:flex; gap:1.75rem; align-items:flex-start;">
+    <section>
+      <div style="margin-bottom:1.75rem;">
+        <h2 style="font-size:1.6rem; font-weight:800; letter-spacing:-0.02em; margin:0 0 0.4rem;">双界编年史</h2>
+        <p style="margin:0; font-size:0.9rem; color:#6b7280;">长篇幻想小说系列</p>
+      </div>
+
+      <div style="display:grid; gap:1rem;">
+
+        <a href="/writing/part1/" class="card" style="text-decoration:none; color:inherit; display:flex; gap:1.5rem; align-items:center;">
+          <div style="flex-shrink:0; width:3.5rem; height:3.5rem; border-radius:0.75rem; background:rgba(99,102,241,0.10); border:1px solid rgba(99,102,241,0.18); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.1rem;">
+            <span style="font-size:0.65rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#6366f1;">PART</span>
+            <span style="font-size:1.3rem; font-weight:800; color:#6366f1; line-height:1;">I</span>
+          </div>
           <div style="flex:1; min-width:0;">
-            <p style="margin: 0 0 1.25rem;">
-              《阳界：阿斯提摩斯》是一部长篇幻想小说。故事建立在一个"双界镜像世界"之上：
-              阳界与阴界彼此对应、彼此隔绝，中间由界膜维持稳定；真正的太阳早已不再照亮天空，
-              今日双界所见的昼夜与天光，来自古代文明遗留下来的人造太阳系统。
-            </p>
+            <div style="font-size:0.78rem; font-weight:600; color:#6366f1; margin-bottom:0.25rem; letter-spacing:0.04em;">第一部</div>
+            <div style="font-size:1.05rem; font-weight:700; margin-bottom:0.3rem;">阳界·阿斯提摩斯</div>
+            <div style="font-size:0.85rem; color:#6b7280; line-height:1.6;">界后 2500 年，从黑松镇到双界真相的旅程。</div>
+          </div>
+          <div style="flex-shrink:0;">
+            <img src="/novel/images/第一部宣传图.png" alt="" style="width:72px; height:72px; object-fit:cover; border-radius:0.6rem; box-shadow:0 2px 8px rgba(0,0,0,0.10);" />
+          </div>
+        </a>
 
-        <div style="display:grid; gap:0.4rem; margin-bottom:1.25rem; padding:0.9rem 1.1rem; background:rgba(99,102,241,0.05); border:1px solid rgba(99,102,241,0.10); border-radius:0.75rem; font-size:0.88rem;">
-          <div style="display:flex; gap:1rem;">
-            <span style="color:#6b7280; min-width:7rem;">主创</span>
-            <span>卿源</span>
+        <div class="card" style="display:flex; gap:1.5rem; align-items:center; opacity:0.5; cursor:default;">
+          <div style="flex-shrink:0; width:3.5rem; height:3.5rem; border-radius:0.75rem; background:rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.08); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.1rem;">
+            <span style="font-size:0.65rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#9ca3af;">PART</span>
+            <span style="font-size:1.3rem; font-weight:800; color:#9ca3af; line-height:1;">II</span>
           </div>
-          <div style="display:flex; gap:1rem;">
-            <span style="color:#6b7280; min-width:7rem;">主编</span>
-            <span>茶惹酒烬</span>
-          </div>
-          <div style="display:flex; gap:1rem;">
-            <span style="color:#6b7280; min-width:7rem;">设定集</span>
-            <span>卿源，茶惹酒烬</span>
-          </div>
-          <div style="display:flex; gap:1rem;">
-            <span style="color:#6b7280; min-width:7rem;">设定图生成</span>
-            <span>ChatGPT</span>
-          </div>
-          <div style="display:flex; gap:1rem;">
-            <span style="color:#6b7280; min-width:7rem;">设定集整理</span>
-            <span>ChatGPT，Claude</span>
+          <div style="flex:1; min-width:0;">
+            <div style="font-size:0.78rem; font-weight:600; color:#9ca3af; margin-bottom:0.25rem; letter-spacing:0.04em;">第二部</div>
+            <div style="font-size:1.05rem; font-weight:700; margin-bottom:0.3rem; color:#9ca3af;">敬请期待</div>
           </div>
         </div>
 
-            <a
-              href="https://www.qidian.com/book/1048636809/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style="font-size:0.9rem; color:#6366f1; font-weight:500; text-decoration:underline; text-underline-offset:3px;"
-            >在起点阅读 ↗</a>
+        <div class="card" style="display:flex; gap:1.5rem; align-items:center; opacity:0.5; cursor:default;">
+          <div style="flex-shrink:0; width:3.5rem; height:3.5rem; border-radius:0.75rem; background:rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.08); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.1rem;">
+            <span style="font-size:0.65rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#9ca3af;">PART</span>
+            <span style="font-size:1.3rem; font-weight:800; color:#9ca3af; line-height:1;">III</span>
           </div>
-
-          <a href="/novel/images/第一部宣传图.png" target="_blank" rel="noopener noreferrer" style="flex-shrink:0; display:block; width:220px;">
-            <img
-              src="/novel/images/第一部宣传图.png"
-              alt="阳界：阿斯提摩斯 第一部宣传图"
-              style="width:100%; border-radius:0.75rem; display:block; box-shadow:0 4px 16px rgba(0,0,0,0.12);"
-            />
-          </a>
+          <div style="flex:1; min-width:0;">
+            <div style="font-size:0.78rem; font-weight:600; color:#9ca3af; margin-bottom:0.25rem; letter-spacing:0.04em;">第三部</div>
+            <div style="font-size:1.05rem; font-weight:700; margin-bottom:0.3rem; color:#9ca3af;">敬请期待</div>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <h2>作品简介</h2>
-        <p style="margin-bottom: 0;">
-          第一部的叙事时间位于界后 2500 年，故事首先从阳界展开。主线从黑松镇、
-          灰脊山、旧路与乌鸦王陵开始，逐步牵出界膜、遗迹、远古文明以及双界真相。
-          在整体结构上，后续还将进入阴界视角、远古文明真相与双界战争等更大叙事层。
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>世界观速览</h2>
-        <p style="margin: 0 0 0.8rem;">
-          这个世界存在于一种盘状镜像星结构中。阳界与阴界在地理上大体对应，但文明形态并不相同。
-          阳界更接近王国、森林、圣城与遗迹并存的古典幻想世界；阴界则发展出符阵科技、能量城市、
-          机关兽与计算阵列等体系。
-        </p>
-        <p style="margin: 0;">
-          古代文明曾将真正的太阳封入恒星壳层，并建造两枚人造太阳维持双界昼夜。
-          当界膜稳定时，双界互不可见；而当界膜变薄、裂隙扩张、遗迹复苏时，
-          "双日""双月"或异常天象便会出现。
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>主要人物</h2>
-        <p style="margin: 0 0 0.8rem;">
-          第一部以阿尔伦·莱诺尔为核心展开。他出身黑松镇，最初只是边地寒村旧姓之后，
-          却逐步被灰脊山、旧路与王陵中的东西"认出来"。在更深层的设定中，
-          他与阴界的林安构成相位双生：两人并非简单镜像，而是同一灵魂模板在双界中的不同展开。
-        </p>
-        <p style="margin: 0;">
-          围绕阿尔伦展开的同伴线，还包括塔林、米拉、伊文等人物；他们分别从战士、
-          荒野守望者与知识整理者的角度，推动故事从边地冒险走向双界历史的核心。
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>设定与资料</h2>
-        <p style="margin: 0 0 0.8rem;">
-          我会继续在这里整理《阳界纪元》的背景设定、历史发展、人物介绍、地图与相关图示，
-          包括第四纪元阳界地图、人造太阳轨迹示意、五大家族与双相灵魂等内容。
-        </p>
-        <p style="margin: 0;">
-          这一部分既是作品的世界观档案，也会作为后续写作中的公开札记。
-        </p>
       </div>
     </section>
   </main>
