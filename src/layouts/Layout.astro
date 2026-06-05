@@ -1,3 +1,7 @@
+---
+interface Props { title?: string; }
+const { title = '汪宸 | 个人主页' } = Astro.props;
+---
 <!doctype html>
 <html lang="zh-CN">
 	<head>
@@ -6,7 +10,7 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>汪宸 | 个人主页</title>
+		<title>{title}</title>
 		<meta name="description" content="汪宸的个人主页，包含研究、写作与开源项目。" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -202,7 +206,7 @@
 	</head>
 
 	<body>
-		<header class="site-header">
+		<header class="site-header" data-pagefind-ignore>
 			<nav class="nav">
 				<a class="brand" href="/">汪宸</a>
 				<div class="nav-links">

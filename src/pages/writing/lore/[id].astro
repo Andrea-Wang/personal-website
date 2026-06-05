@@ -14,7 +14,7 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<Layout>
+<Layout title={`${entry.data.title} | 设定集`}>
   <main class="page-main">
     <div style="margin-bottom: 1.5rem; display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
       <a href="/writing/" style="font-size:0.88rem; color:#6b7280; font-weight:500;">写作</a>
