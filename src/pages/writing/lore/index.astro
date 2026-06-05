@@ -1,11 +1,12 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import WritingSearch from '../../../components/WritingSearch.astro';
 import { getCollection } from 'astro:content';
 
 const entries = await getCollection('novel');
 entries.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 
-const categories = ['世界观', '人物', '地理', '历史', '势力', '其他'];
+const categories = ['世界观', '人物', '地理', '历史', '势力', '道具', '其他'];
 
 function entriesByCategory(cat: string) {
   return entries.filter(e => e.data.category === cat);
@@ -19,13 +20,8 @@ function entriesByCategory(cat: string) {
     </div>
 
     <section style="margin-bottom: 2rem;">
-      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-bottom:0;">
-        <h1 style="font-size: 2.8rem; font-weight: 800; line-height: 1.1; margin: 0; letter-spacing: -0.03em;">设定集</h1>
-        <a href="/writing/lore/search/" style="display:inline-flex; align-items:center; gap:0.45rem; padding:0.5rem 1.1rem; background:rgba(255,255,255,0.75); backdrop-filter:blur(12px); border:1px solid rgba(0,0,0,0.09); border-radius:9999px; font-size:0.875rem; font-weight:500; color:#6b7280; text-decoration:none; transition:border-color 0.15s, color 0.15s;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          搜索设定集
-        </a>
-      </div>
+      <h1 style="font-size: 2.8rem; font-weight: 800; line-height: 1.1; margin: 0 0 1.5rem; letter-spacing: -0.03em;">设定集</h1>
+      <WritingSearch placeholder="搜索设定集内容……" />
     </section>
 
     {entries.length === 0 ? (
