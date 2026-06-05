@@ -9,7 +9,7 @@ for (const path of Object.keys(allFiles).sort()) {
   const parts = relative.split('/');
   if (parts.length < 2) continue;
   const group = decodeURIComponent(parts[0]);
-  const name = decodeURIComponent(parts[1].replace(/\.[^.]+$/, ''));
+  const name = decodeURIComponent(parts[1].replace(/\.[^.]+$/, '').replace(/^\d+_/, ''));
   const src = path.replace('/public', '');
   if (!groups[group]) groups[group] = [];
   groups[group].push({ src, name });
