@@ -12,64 +12,64 @@ const { placeholder = '搜索写作内容……' } = Astro.props;
   .writing-search-wrap { margin-bottom: 2rem; }
 
   :global(.pagefind-ui__search-input) {
-    background: rgba(255,255,255,0.80) !important;
-    border: 1px solid rgba(0,0,0,0.10) !important;
+    background: var(--surface) !important;
+    border: 1px solid var(--line) !important;
     border-radius: 0.85rem !important;
     font-size: 0.95rem !important;
     padding: 0.65rem 1rem 0.65rem 2.5rem !important;
     width: 100% !important;
     font-family: inherit !important;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+    box-shadow: 0 1px 3px var(--accent-soft) !important;
     transition: border-color 0.15s, box-shadow 0.15s !important;
-    color: #111827 !important;
+    color: var(--text) !important;
   }
   :global(.pagefind-ui__search-input:focus) {
     outline: none !important;
-    border-color: rgba(99,102,241,0.45) !important;
-    box-shadow: 0 0 0 3px rgba(99,102,241,0.12) !important;
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 3px var(--line-strong) !important;
   }
-  :global(.pagefind-ui__search-input::placeholder) { color: #9ca3af !important; }
+  :global(.pagefind-ui__search-input::placeholder) { color: var(--faint) !important; }
 
   :global(.pagefind-ui__result-list) { margin-top: 0.75rem !important; }
   :global(.pagefind-ui__result) {
-    background: rgba(255,255,255,0.82) !important;
-    border: 1px solid rgba(0,0,0,0.07) !important;
+    background: var(--surface) !important;
+    border: 1px solid var(--line) !important;
     border-radius: 1rem !important;
     padding: 1rem 1.25rem !important;
     margin-bottom: 0.6rem !important;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05) !important;
+    box-shadow: 0 1px 4px var(--accent-soft) !important;
     list-style: none !important;
   }
   :global(.pagefind-ui__result-link) {
-    color: #111827 !important;
+    color: var(--text) !important;
     font-weight: 600 !important;
     font-size: 0.95rem !important;
     text-decoration: none !important;
   }
-  :global(.pagefind-ui__result-link:hover) { color: #6366f1 !important; }
+  :global(.pagefind-ui__result-link:hover) { color: var(--accent) !important; }
   :global(.pagefind-ui__result-excerpt) {
-    color: #6b7280 !important;
+    color: var(--muted) !important;
     font-size: 0.85rem !important;
     margin-top: 0.3rem !important;
     line-height: 1.7 !important;
   }
   :global(mark) {
-    background: rgba(99,102,241,0.15) !important;
-    color: #4338ca !important;
+    background: var(--line-strong) !important;
+    color: var(--accent) !important;
     border-radius: 0.2rem;
     padding: 0 0.1em;
   }
-  :global(.pagefind-ui__message) { color: #9ca3af !important; font-size: 0.85rem !important; }
+  :global(.pagefind-ui__message) { color: var(--faint) !important; font-size: 0.85rem !important; }
   :global(.pagefind-ui__search-clear) {
-    color: #9ca3af !important;
+    color: var(--faint) !important;
     background: transparent !important;
     border: none !important;
   }
   :global(.pagefind-ui__button) {
-    background: rgba(99,102,241,0.08) !important;
-    color: #6366f1 !important;
-    border: 1px solid rgba(99,102,241,0.18) !important;
-    border-radius: 9999px !important;
+    background: var(--accent-soft) !important;
+    color: var(--accent) !important;
+    border: 1px solid var(--line-strong) !important;
+    border-radius:var(--radius) !important;
     font-size: 0.85rem !important;
     font-weight: 500 !important;
     padding: 0.45rem 1.1rem !important;

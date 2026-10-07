@@ -16,7 +16,7 @@ function entriesByCategory(cat: string) {
 <Layout>
   <main class="page-main">
     <div style="margin-bottom: 0.75rem;">
-      <a href="/writing/" style="font-size:0.88rem; color:#6b7280; font-weight:500;">← 写作</a>
+      <a href="/writing/" style="font-size:0.88rem; color:var(--muted); font-weight:500;">← 写作</a>
     </div>
 
     <section style="margin-bottom: 2rem;">
@@ -25,7 +25,7 @@ function entriesByCategory(cat: string) {
     </section>
 
     {entries.length === 0 ? (
-      <div class="card" style="text-align:center; color:#6b7280; padding: 3rem;">
+      <div class="card" style="text-align:center; color:var(--muted); padding: 3rem;">
         设定文档整理中，敬请期待。
       </div>
     ) : (
@@ -35,17 +35,17 @@ function entriesByCategory(cat: string) {
           if (group.length === 0) return null;
           return (
             <div>
-              <h2 style="font-size:0.8rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#6b7280; margin:0 0 1rem;">{cat}</h2>
+              <h2 style="font-size:0.8rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin:0 0 1rem;">{cat}</h2>
               <div style="display: grid; gap: 0.75rem;">
                 {group.map(entry => (
                   <a href={`/writing/lore/${entry.id}/`} class="card" style="text-decoration:none; color:inherit; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.1rem 1.5rem;">
                     <div>
                       <div style="font-weight:600; font-size:1rem; margin-bottom:0.25rem;">{entry.data.title}</div>
                       {entry.data.description && (
-                        <div style="font-size:0.85rem; color:#6b7280; line-height:1.6;">{entry.data.description}</div>
+                        <div style="font-size:0.85rem; color:var(--muted); line-height:1.6;">{entry.data.description}</div>
                       )}
                     </div>
-                    <span style="color:#9ca3af; flex-shrink:0;">→</span>
+                    <span style="color:var(--faint); flex-shrink:0;">→</span>
                   </a>
                 ))}
               </div>

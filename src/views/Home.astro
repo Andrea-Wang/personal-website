@@ -1,0 +1,295 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { linkGroups } from '../data/links';
+import { localize, type Lang } from '../i18n';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const href = (p: string) => localize(p, lang);
+
+const copy = {
+  zh: {
+    mapAlt: '莱比锡城市地图',
+    name: '汪宸',
+    role: 'Chen Wang · 化学博士生，莱比锡大学',
+    research: '研究',
+    writing: '写作',
+    now: '现在',
+    nowResearch: '在莱比锡大学 Abel 课题组做撞击型飞行时间质谱（TOF-MS）实验，组装 SELINA 撞击电离平台，分析土卫二冰羽粒子里可能的生命信号。',
+    nowWriting: '长篇幻想小说《双界编年史》第一部《阳界·阿斯提摩斯》连载中，同时在整理世界观设定集和人物设定图。',
+    figAlt: '一只小狗趴在堆满质谱笔记和天体生物学书籍的书桌上',
+    figCaption: '大多数时候的状态。',
+    links: '常用链接',
+    directions: '研究方向',
+    more: '查看研究详情 →',
+    ms: {
+      title: '质谱与生命起源',
+      alt: 'Cassini 拍摄的土卫二羽流',
+      body: '研究氨基酸、脂质等生命相关分子在不同电离与碰撞条件下怎么碎裂，并把实验结果和 Cassini 在土卫二羽流中的质谱观测对应起来，为未来冰卫星探测任务提供识别生命信号的解释框架。',
+    },
+    cl: {
+      title: '化学发光与光聚合',
+      alts: ['萤火虫', '化学发光反应', '荧光棒'],
+      body: '用化学反应自身发出的可见光作光源引发聚合：化学发光被硫鎓盐等光引发剂吸收后产生活性酸，引发阳离子聚合。不需要外部光源，就能得到线性聚合物或自身发光的交联网络。',
+    },
+  },
+  en: {
+    mapAlt: 'Street map of Leipzig',
+    name: 'Chen Wang',
+    role: '汪宸 · PhD researcher in chemistry, Leipzig University',
+    research: 'Research',
+    writing: 'Writing',
+    now: 'Now',
+    nowResearch: 'Running hypervelocity-impact time-of-flight mass spectrometry (TOF-MS) experiments in the Abel group at Leipzig University, building the SELINA impact-ionisation platform, and looking for possible biosignatures in Enceladus plume grains.',
+    nowWriting: 'Serialising Part I of a long fantasy series (in Chinese), and putting together its world-building notes and character art.',
+    figAlt: 'A puppy slumped over a desk covered in mass spectrometry notes and astrobiology books',
+    figCaption: 'Most days, roughly.',
+    links: 'Quick links',
+    directions: 'Research',
+    more: 'More on my research →',
+    ms: {
+      title: 'Mass spectrometry & the origin of life',
+      alt: 'Plumes of Enceladus imaged by Cassini',
+      body: 'How do amino acids, lipids and other life-related molecules fragment under different ionisation and collision conditions? I match these lab results to Cassini’s mass spectra of the Enceladus plume, to build an interpretive framework for spotting biosignatures in future icy-moon missions.',
+    },
+    cl: {
+      title: 'Chemiluminescence & photopolymerisation',
+      alts: ['Firefly', 'Chemiluminescent reaction', 'Glow sticks'],
+      body: 'Using the light a chemical reaction emits to drive polymerisation: chemiluminescence is absorbed by a sulfonium-salt photoinitiator, which releases an acid that starts cationic polymerisation. No external light source is needed, and the result can be linear polymers or self-luminous crosslinked networks.',
+    },
+  },
+}[lang];
+---
+
+<Layout lang={lang}>
+  <style>
+    .hero {
+      position: relative;
+      height: calc(100vh - 3.6rem);
+      height: calc(100svh - 3.6rem);
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('/images/Leipzig.jpg') center bottom / cover no-repeat;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 45% 40% at 18% 52%, color-mix(in srgb, var(--bg) 80%, transparent) 0%, transparent 100%);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1120px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 1.5rem 6rem;
+    }
+    .hero h1 {
+      font-family: 'Noto Serif SC', var(--serif);
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 700;
+      line-height: 1;
+      margin: 0 0 0.75rem;
+    }
+    .hero h1.en { font-family: var(--serif); font-weight: 600; }
+    .band h3:lang(en) { font-family: var(--serif); font-weight: 600; }
+    .hero .role { font-size: 1.05rem; color: var(--text-2); margin: 0 0 1.4rem; }
+    .hero .hero-links { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.92rem; }
+    .hero .hero-links a { border-bottom: 1px solid var(--line-strong); padding-bottom: 1px; }
+    .hero .hero-links a:hover { color: var(--accent); border-bottom-color: currentColor; }
+
+    @media (prefers-color-scheme: dark) {
+      .hero-bg { filter: invert(0.92) hue-rotate(180deg) brightness(0.9); }
+    }
+
+    .home {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 440px;
+      gap: 3.5rem;
+      line-height: 1.8;
+    }
+
+    .now { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .now p { margin: 0.35rem 0 0; color: var(--text-2); font-size: 0.95rem; }
+    .now-figure { margin: 1.75rem 0 0; }
+    .now-figure img { display: block; width: 100%; aspect-ratio: 16 / 7; object-fit: cover; object-position: center 35%; border-radius: var(--radius); }
+    .now-figure figcaption { font-size: 0.78rem; color: var(--faint); margin-top: 0.5rem; }
+
+    /* ── 研究方向：通栏大图 ── */
+    .bands-head { max-width: 1120px; margin: 0 auto; padding: 2.25rem 1.5rem 1.25rem; }
+    .bands-head h2 { font-size: 1.35rem; margin: 0; }
+    .band {
+      position: relative;
+      height: min(88vh, 820px);
+      min-height: 520px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      color: #fff;
+      background: #080808;
+    }
+    .band + .band { border-top: 2px solid var(--bg); }
+    .band-bg { position: absolute; inset: 0; }
+    .band-bg > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .band::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 35%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.85) 100%);
+    }
+    .band-text { position: relative; z-index: 1; max-width: 1120px; width: 100%; margin: 0 auto; padding: 0 1.5rem 4rem; }
+    .band h3 { font-family: 'Noto Serif SC', var(--serif); font-size: clamp(2.2rem, 5.5vw, 3.8rem); font-weight: 700; line-height: 1.1; margin: 0 0 1rem; }
+    .band p { max-width: 600px; margin: 0 0 1.25rem; font-size: 1rem; line-height: 1.85; color: rgba(255,255,255,0.82); }
+    .band a { font-size: 0.92rem; border-bottom: 1px solid rgba(255,255,255,0.5); padding-bottom: 1px; }
+    .band a:hover { border-bottom-color: #fff; }
+    .band .credit { position: absolute; right: 1.5rem; bottom: 0.9rem; z-index: 1; font-size: 0.68rem; color: rgba(255,255,255,0.4); }
+    .collage { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 65% 35%; }
+    .collage .contain { object-fit: contain; }
+    .collage .wide { grid-column: 1 / 3; }
+
+
+    /* ── Quick links ── */
+    .quick {
+      position: sticky;
+      top: 3.6rem;
+      align-self: start;
+      max-height: calc(100vh - 3.6rem);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+      scrollbar-color: var(--line-strong) transparent;
+      padding: 2.25rem 0.5rem 2rem 0;
+      font-size: 0.88rem;
+    }
+    .quick h2 { font-size: 1.05rem; margin: 0 0 1rem; }
+    .quick h3 {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--faint);
+      margin: 1.25rem 0 0.35rem;
+    }
+    .quick ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 1.5rem; }
+    .quick a {
+      display: flex;
+      min-width: 0;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.28rem 0;
+      color: var(--text-2);
+      border-bottom: 1px dotted var(--line);
+      line-height: 1.5;
+    }
+    .quick a:hover { color: var(--accent); }
+    .quick a .note { color: var(--faint); font-family: var(--mono); font-size: 0.7rem; white-space: nowrap; padding-top: 0.15rem; }
+
+    @media (max-width: 900px) {
+      .home { grid-template-columns: 1fr; gap: 0; }
+      .quick { position: static; max-height: none; overflow: visible; border-top: 1px solid var(--line); }
+    }
+    @media (max-width: 640px) {
+      .hero-inner { padding: 0 1rem 5rem; }
+      .hero::after { background: linear-gradient(to bottom, color-mix(in srgb, var(--bg) 85%, transparent), transparent 75%); }
+      .home { padding: 0.5rem 1rem 4rem; }
+      .now { grid-template-columns: 1fr; gap: 1.25rem; }
+      .band-text { padding: 0 1rem 3rem; }
+      .band { min-height: 480px; }
+      .quick ul { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <section class="hero" data-pagefind-ignore>
+    <div class="hero-bg" role="img" aria-label={copy.mapAlt}></div>
+    <div class="hero-inner">
+      <h1 class={lang}>{copy.name}</h1>
+      <p class="role">{copy.role}</p>
+      <div class="hero-links">
+        <a href={href('/research/')}>{copy.research}</a>
+        <a href={href('/writing/')}>{copy.writing}</a>
+        <a href="https://orcid.org/0009-0006-3904-917X" target="_blank" rel="noopener noreferrer">ORCID ↗</a>
+        <a href="https://github.com/Andrea-Wang" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="home" id="now" data-pagefind-ignore>
+    <main>
+      <section class="section" style="border-top:none;">
+        <h2>{copy.now}</h2>
+        <div class="now">
+          <div>
+            <span class="label">{copy.research}</span>
+            <p>{copy.nowResearch}</p>
+          </div>
+          <div>
+            <span class="label">{copy.writing}</span>
+            <p>{copy.nowWriting}</p>
+          </div>
+        </div>
+        <figure class="now-figure">
+          <img src="/images/Sleep.jpg" alt={copy.figAlt} loading="lazy" />
+          <figcaption>{copy.figCaption}</figcaption>
+        </figure>
+      </section>
+
+    </main>
+
+    <aside class="quick" aria-label={copy.links}>
+      <h2>{copy.links}</h2>
+      {linkGroups.map(group => (
+        <>
+          <h3>{lang === 'zh' ? group.title : group.titleEn}</h3>
+          <ul>
+            {group.links.map(link => (
+              <li>
+                <a href={link.href} target="_blank" rel="noopener noreferrer">
+                  <span>{link.label}</span>
+                  {link.note && <span class="note">{link.note}</span>}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </>
+      ))}
+    </aside>
+  </div>
+
+  <section id="directions" data-pagefind-ignore>
+    <div class="bands-head"><h2>{copy.directions}</h2></div>
+
+    <div class="band">
+      <div class="band-bg"><img src="/images/Cassini.jpg" alt={copy.ms.alt} loading="lazy" /></div>
+      <div class="band-text">
+        <h3>{copy.ms.title}</h3>
+        <p>{copy.ms.body}</p>
+        <a href={href('/research/')}>{copy.more}</a>
+      </div>
+      <span class="credit">Image: NASA / Cassini</span>
+    </div>
+
+    <div class="band">
+      <div class="band-bg collage">
+        <img src="/images/萤火虫.jpg" alt={copy.cl.alts[0]} loading="lazy" />
+        <img class="contain" src="/images/CL.png" alt={copy.cl.alts[1]} loading="lazy" />
+        <img class="wide" src="/images/荧光棒.jpg" alt={copy.cl.alts[2]} loading="lazy" />
+      </div>
+      <div class="band-text">
+        <h3>{copy.cl.title}</h3>
+        <p>{copy.cl.body}</p>
+        <a href={href('/research/')}>{copy.more}</a>
+      </div>
+    </div>
+  </section>
+</Layout>

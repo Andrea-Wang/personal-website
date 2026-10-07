@@ -1,0 +1,242 @@
+---
+import Layout from '../layouts/Layout.astro';
+import type { Lang } from '../i18n';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+
+const preprints = [
+  {
+    authors: ['Spesyvyi A.', 'Wang C.', 'Charvat A.', 'Barragán Mayet H. O.', 'Cebecauer M.', 'Olżyńska A.', 'Jahn R.', 'Polášek M.', 'Žabka J.', 'Abel B.'],
+    me: 1,
+    title: 'Hypervelocity Impact Mass Spectrometry Enables Membrane Phospholipid Detection in Ocean-World Plumes',
+    venue: 'ChemRxiv', cite: '2026',
+    doi: '10.26434/chemrxiv.15009243/v1',
+  },
+  {
+    authors: ['Domschke N.', 'Wang C.', 'Golnik R.', 'Charvat A.', 'Spesyvyi A.', 'Gatter T.', 'Abel B.', 'Stadler P. F.'],
+    me: 1,
+    title: 'Fragment Tree Reconciliation (FTR) for Space Applications',
+    venue: 'Research Square', cite: '2026',
+    doi: '10.21203/rs.3.rs-8855497/v1',
+  },
+];
+
+const pubs = [
+  {
+    authors: ['Wang C.', 'Meng X.', 'Li Z.', 'Li M.', 'Jin M.', 'Liu R.', 'Yagci Y.'],
+    me: 0,
+    title: 'Chemiluminescence Induced Cationic Photopolymerization Using Sulfonium Salt',
+    venue: 'ACS Macro Letters', cite: '2020, 9(4), 471–475',
+    doi: '10.1021/acsmacrolett.0c00003',
+  },
+  {
+    authors: ['Wang C.', 'Wang C.', 'Li Z.'],
+    me: 1,
+    title: 'Thiol-ene-acrylate Ternary Photosensitive Resins for DLP 3D Printing',
+    venue: 'Journal of Photopolymer Science and Technology', cite: '2020, 33(3), 285–290',
+    doi: '10.2494/photopolymer.33.285',
+  },
+  {
+    authors: ['Meng X.', 'Lu H.', 'Li Z.', 'Wang C.', 'Liu R.', 'Guan X.', 'Yagci Y.'],
+    me: 3,
+    title: 'Near-infrared Light Induced Cationic Polymerization based on Upconversion and Ferrocenium Photochemistry',
+    venue: 'Polymer Chemistry', cite: '2019, 10(41), 5574–5577',
+    doi: '10.1039/c9py01262a',
+  },
+];
+
+const datasets = [
+  {
+    title: "Data for 'Hypervelocity impact mass spectrometry enables membrane phospholipid detection in ocean-world plumes'",
+    authors: 'Spesyvyi A., Wang C., Jahn R., Barragán Mayet H. O.',
+    repo: 'EOSC CZ Data Repository', year: 2026,
+    href: 'https://doi.org/10.48700/jzzpw-4kb09', linkText: 'doi:10.48700/jzzpw-4kb09',
+  },
+  {
+    title: 'Energy-dependence MS/MS of amino acids and peptides — mzML positive and negative',
+    authors: 'Wang C., Spesyvyi A., Charvat A., Abel B.',
+    repo: 'Zenodo', year: 2026,
+    href: 'https://doi.org/10.5281/zenodo.18270298', linkText: 'doi:10.5281/zenodo.18270298',
+  },
+  {
+    title: 'Energy-dependence MS/MS of amino acids and peptides — raw positive and negative',
+    authors: 'Wang C., Spesyvyi A., Charvat A., Abel B.',
+    repo: 'Zenodo', year: 2026,
+    href: 'https://doi.org/10.5281/zenodo.18270480', linkText: 'doi:10.5281/zenodo.18270480',
+  },
+];
+
+const copy = {
+  zh: {
+    title: '研究 | 汪宸',
+    heading: '研究',
+    lede: '质谱、光化学与生命信号分析。博士阶段在莱比锡大学 Prof. Bernd Abel 课题组。',
+    current: '当前工作',
+    currentItems: [
+      '高分辨率 Orbitrap 质谱撞击诱导碎裂与碎片图谱分析',
+      '撞击型飞行时间质谱（TOF-MS）实验',
+      '土卫二（卡西尼-惠更斯号）相关生命信号分析',
+      '撞击粒子实验平台 SELINA 的设计与组装',
+    ],
+    interests: '研究兴趣',
+    interestItems: [
+      { title: '质谱与仪器分析', body: 'Orbitrap 高分辨质谱；碰撞诱导解离碎裂机理；撞击型 TOF-MS 实验与数据分析；SELINA 撞击电离平台设计与组装；生物分子碎片图谱鉴定；面向海洋世界的生物标志物预测与检测。' },
+      { title: '微流控与器件制造', body: '微流控芯片设计与加工；DLP、FDM 等 3D 打印技术；化学发光微流控体系的构建。' },
+      { title: '数据分析与计算化学', body: '基于 Python 的 MS/MS 数据自动化处理与可视化；基于 ORCA 的量子化学计算；键解离能与分子碎裂分析。' },
+      { title: '材料与光化学', body: '高分子化学；光固化与光聚合体系；化学发光诱导光聚合；双光子光刻；化学镀金属图案化。' },
+    ],
+    papers: '论文',
+    preprints: '预印本',
+    articles: '期刊论文',
+    fullList: ['完整列表见 ', '。'],
+    datasets: '数据集',
+    methods: '方法与工具',
+    methodItems: [
+      'Orbitrap 高分辨质谱', '撞击型 TOF-MS', 'Python MS/MS 数据处理', 'ORCA 量子化学计算',
+      'DLP / FDM 3D 打印', '微流控芯片制造', '科研绘图与统计分析', '光聚合体系与光化学',
+    ],
+  },
+  en: {
+    title: 'Research | Chen Wang',
+    heading: 'Research',
+    lede: 'Mass spectrometry, photochemistry and biosignature detection. PhD in the group of Prof. Bernd Abel at Leipzig University.',
+    current: 'Current work',
+    currentItems: [
+      'Impact-induced fragmentation and fragment-spectrum analysis with high-resolution Orbitrap MS',
+      'Hypervelocity-impact time-of-flight mass spectrometry (TOF-MS) experiments',
+      'Biosignature analysis for Enceladus (Cassini–Huygens)',
+      'Design and assembly of SELINA, an impact-ionisation platform for particle experiments',
+    ],
+    interests: 'Interests',
+    interestItems: [
+      { title: 'Mass spectrometry & instrumentation', body: 'High-resolution Orbitrap MS; collision-induced dissociation mechanisms; impact TOF-MS experiments and data analysis; design and assembly of the SELINA impact-ionisation platform; fragment-spectrum identification of biomolecules; biomarker prediction and detection for ocean worlds.' },
+      { title: 'Microfluidics & fabrication', body: 'Microfluidic chip design and fabrication; DLP and FDM 3D printing; chemiluminescent microfluidic systems.' },
+      { title: 'Data analysis & computational chemistry', body: 'Automated MS/MS data processing and visualisation in Python; quantum-chemical calculations with ORCA; bond dissociation energies and molecular fragmentation.' },
+      { title: 'Materials & photochemistry', body: 'Polymer chemistry; photocuring and photopolymerisation; chemiluminescence-induced photopolymerisation; two-photon lithography; electroless metal patterning.' },
+    ],
+    papers: 'Publications',
+    preprints: 'Preprints',
+    articles: 'Journal articles',
+    fullList: ['Full list on ', '.'],
+    datasets: 'Datasets',
+    methods: 'Methods & tools',
+    methodItems: [
+      'High-resolution Orbitrap MS', 'Impact TOF-MS', 'MS/MS data processing in Python', 'Quantum chemistry with ORCA',
+      'DLP / FDM 3D printing', 'Microfluidic fabrication', 'Scientific plotting & statistics', 'Photopolymerisation & photochemistry',
+    ],
+  },
+}[lang];
+---
+
+<Layout title={copy.title} lang={lang}>
+  <style>
+    .orcid { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.88rem; color: var(--text-2); font-variant-numeric: tabular-nums; margin-top: 1rem; }
+    .orcid:hover { color: var(--accent); }
+
+    .interests { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2.5rem; }
+    .interests h3 { font-size: 1.02rem; margin: 0 0 0.3rem; }
+    .interests p { margin: 0; font-size: 0.93rem; color: var(--text-2); }
+
+    .current ul { margin: 0.5rem 0 0; padding-left: 1.2rem; font-size: 0.95rem; color: var(--text-2); }
+
+    .pub-group { font-family: var(--mono); font-size: 0.75rem; font-weight: 400; letter-spacing: 0.06em; color: var(--faint); margin: 0 0 1rem; }
+    .pubs + .pub-group { margin-top: 0.75rem; }
+    .pubs { list-style: none; counter-reset: pub; padding: 0; margin: 0; }
+    .pubs li { counter-increment: pub; position: relative; padding: 0 0 1.4rem 2.25rem; }
+    .pubs li::before { content: '[' counter(pub) ']'; position: absolute; left: 0; font-family: var(--mono); font-size: 0.8rem; color: var(--faint); top: 0.2rem; }
+    .pubs .title { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; line-height: 1.45; color: var(--text); }
+    .pubs .authors, .pubs .meta { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+    .pubs .authors strong { color: var(--text); font-weight: 600; }
+    .pubs .meta em { color: var(--text-2); }
+    .pubs .doi { font-family: var(--mono); font-size: 0.78rem; color: var(--accent); }
+    .pubs .doi:hover { text-decoration: underline; }
+
+    .datasets { list-style: none; padding: 0; margin: 0; display: grid; gap: 1.4rem; }
+    .dataset .title { font-family: var(--serif); font-weight: 600; font-size: 1.02rem; line-height: 1.45; }
+    .dataset .meta { font-size: 0.88rem; color: var(--muted); }
+    .dataset .doi { font-family: var(--mono); font-size: 0.78rem; color: var(--accent); }
+    .dataset .doi:hover { text-decoration: underline; }
+
+    .methods { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 2rem; font-size: 0.92rem; }
+    .methods li { padding: 0.4rem 0; border-bottom: 1px solid var(--line); color: var(--text-2); }
+
+    @media (max-width: 640px) {
+      .interests, .methods { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <main class="page-main" data-pagefind-ignore>
+    <header style="margin-bottom: 2.5rem;">
+      <h1 class="page-title">{copy.heading}</h1>
+      <p class="lede">{copy.lede}</p>
+      <a class="orcid" href="https://orcid.org/0009-0006-3904-917X" target="_blank" rel="noopener noreferrer">
+        <svg width="16" height="16" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#A6CE39"/><g fill="#fff"><rect x="70" y="80" width="18" height="100"/><circle cx="79" cy="58" r="11"/><path d="M107 80h48c37 0 54 26 54 50s-17 50-54 50h-48zm18 84h28c29 0 37-20 37-34s-9-34-37-34h-28z"/></g></svg>
+        orcid.org/0009-0006-3904-917X
+      </a>
+    </header>
+
+    <section class="section current">
+      <h2>{copy.current}</h2>
+      <ul>
+        {copy.currentItems.map(item => <li>{item}</li>)}
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>{copy.interests}</h2>
+      <div class="interests">
+        {copy.interestItems.map(i => (
+          <div>
+            <h3>{i.title}</h3>
+            <p>{i.body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <h2>{copy.papers}</h2>
+      {[{ heading: copy.preprints, items: preprints }, { heading: copy.articles, items: pubs }].map(group => (
+        <>
+          <h3 class="pub-group">{group.heading}</h3>
+          <ol class="pubs">
+            {group.items.map(p => (
+              <li>
+                <div class="title">{p.title}</div>
+                <div class="authors">
+                  {p.authors.map((a, i) => (
+                    <>{i > 0 && ', '}{i === p.me ? <strong>{a}</strong> : a}</>
+                  ))}
+                </div>
+                <div class="meta"><em>{p.venue}</em>, {p.cite}</div>
+                <a class="doi" href={`https://doi.org/${p.doi}`} target="_blank" rel="noopener noreferrer">doi:{p.doi}</a>
+              </li>
+            ))}
+          </ol>
+        </>
+      ))}
+      <p style="font-size:0.85rem; color:var(--muted); margin:0.5rem 0 0;">{copy.fullList[0]}<a class="text-link" href="https://orcid.org/0009-0006-3904-917X" target="_blank" rel="noopener noreferrer">ORCID</a>{copy.fullList[1]}</p>
+    </section>
+
+    <section class="section dataset">
+      <h2>{copy.datasets}</h2>
+      <ul class="datasets">
+        {datasets.map(d => (
+          <li>
+            <div class="title">{d.title}</div>
+            <div class="meta">{d.authors} · {d.repo}, {d.year}</div>
+            <a class="doi" href={d.href} target="_blank" rel="noopener noreferrer">{d.linkText}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>{copy.methods}</h2>
+      <ul class="methods">
+        {copy.methodItems.map(m => <li>{m}</li>)}
+      </ul>
+    </section>
+  </main>
+</Layout>

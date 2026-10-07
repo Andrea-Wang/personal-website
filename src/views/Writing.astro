@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WritingSearch from '../components/WritingSearch.astro';
+import type { Lang } from '../i18n';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+
+// 写作内容只有中文；英文页只做介绍，链接仍指向中文页面。
+const copy = {
+  zh: {
+    title: '写作 | 汪宸',
+    heading: '写作',
+    intro: '',
+    lore: ['设定集', '世界观、人物、历史、势力等设定文档。'],
+    gallery: ['设定图', '地图、人物设定图与世界观插图。'],
+    series: '双界编年史',
+    seriesNote: '长篇幻想小说系列',
+    parts: [
+      { n: 'I', label: '第一部', title: '阳界·阿斯提摩斯', desc: '界后 2500 年，从黑松镇到双界真相的旅程。', href: '/writing/part1/', img: '/novel/images/第一部宣传图.png' },
+      { n: 'II', label: '第二部' },
+      { n: 'III', label: '第三部' },
+      { n: 'IV', label: '第四部' },
+    ],
+    soon: '敬请期待',
+  },
+  en: {
+    title: 'Writing | Chen Wang',
+    heading: 'Writing',
+    intro: 'Outside the lab I write long-form fantasy fiction in Chinese. The novel, world-building notes and artwork below are in Chinese only.',
+    lore: ['World-building notes', 'Cosmology, characters, history and factions (in Chinese).'],
+    gallery: ['Artwork', 'Maps, character designs and illustrations.'],
+    series: '双界编年史',
+    seriesNote: 'A fantasy series set in two mirrored worlds',
+    parts: [
+      { n: 'I', label: 'Part I', title: '阳界·阿斯提摩斯', desc: 'From a remote border town to the truth behind the two worlds. Now being serialised (in Chinese).', href: '/writing/part1/', img: '/novel/images/第一部宣传图.png' },
+      { n: 'II', label: 'Part II' },
+      { n: 'III', label: 'Part III' },
+      { n: 'IV', label: 'Part IV' },
+    ],
+    soon: 'Coming later',
+  },
+}[lang];
+---
+
+<Layout title={copy.title} lang={lang}>
+  <style>
+    .entries { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .entries h2 { font-size: 1.1rem; margin: 0 0 0.3rem; }
+    .entries p { margin: 0; font-size: 0.88rem; color: var(--muted); }
+
+    .series-head { display: flex; align-items: baseline; gap: 0.9rem; margin-bottom: 1rem; }
+    .series-head h2 { font-size: 1.5rem; margin: 0; }
+    .series-head span { color: var(--muted); font-size: 0.9rem; }
+
+    .parts { list-style: none; padding: 0; margin: 0; }
+    .parts li { border-top: 1px solid var(--line); }
+    .parts li:last-child { border-bottom: 1px solid var(--line); }
+    .part { display: grid; grid-template-columns: 3rem minmax(0, 1fr) auto; gap: 1.25rem; align-items: center; padding: 1.1rem 0; }
+    .part .num { font-family: var(--serif); font-size: 1.5rem; color: var(--faint); }
+    .part .title { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; }
+    .part .desc { font-size: 0.88rem; color: var(--muted); }
+    .part img { width: 64px; height: 64px; object-fit: cover; border-radius: var(--radius); display: block; }
+    a.part:hover .title { color: var(--accent); }
+    a.part .num { color: var(--accent); }
+    .part.pending { color: var(--faint); }
+
+    @media (max-width: 640px) {
+      .entries { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <main class="page-main" data-pagefind-ignore={lang === 'en' ? true : undefined}>
+    <header style="margin-bottom: 2rem;">
+      <h1 class="page-title">{copy.heading}</h1>
+      {lang === 'zh' ? <WritingSearch placeholder="搜索写作内容……" /> : <p class="lede">{copy.intro}</p>}
+    </header>
+
+    <section class="entries" style="margin-bottom: 3rem;">
+      <a href="/writing/lore/" class="card">
+        <h2>{copy.lore[0]}</h2>
+        <p>{copy.lore[1]}</p>
+      </a>
+      <a href="/writing/gallery/" class="card">
+        <h2>{copy.gallery[0]}</h2>
+        <p>{copy.gallery[1]}</p>
+      </a>
+    </section>
+
+    <section>
+      <div class="series-head">
+        <h2>{copy.series}</h2>
+        <span>{copy.seriesNote}</span>
+      </div>
+
+      <ol class="parts">
+        {copy.parts.map(p => (
+          <li>
+            {p.href ? (
+              <a class="part" href={p.href}>
+                <span class="num">{p.n}</span>
+                <div>
+                  <div class="label">{p.label}</div>
+                  <div class="title">{p.title}</div>
+                  <div class="desc">{p.desc}</div>
+                </div>
+                <img src={p.img} alt="" />
+              </a>
+            ) : (
+              <div class="part pending">
+                <span class="num">{p.n}</span>
+                <div>
+                  <div class="label">{p.label}</div>
+                  <div>{copy.soon}</div>
+                </div>
+              </div>
+            )}
+          </li>
+        ))}
+      </ol>
+    </section>
+  </main>
+</Layout>

@@ -5,36 +5,36 @@ import Layout from '../../layouts/Layout.astro';
 <Layout>
 
   <!-- Full-viewport split hero -->
-  <div style="position:relative; min-height:100vh; display:flex; align-items:stretch; overflow:hidden; padding-top:4.5rem;">
+  <div style="position:relative; min-height:calc(100vh - 3.5rem); display:flex; align-items:stretch; overflow:hidden;">
 
     <!-- Left half: text -->
     <div style="flex:0 0 50%; display:flex; flex-direction:column; justify-content:center; padding:4rem 3rem 4rem 2.5rem; position:relative; z-index:2;">
 
       <div style="margin-bottom:1.25rem;">
-        <a href="/writing/" style="font-size:0.85rem; color:#6b7280; font-weight:500; text-decoration:none;">← 双界编年史</a>
+        <a href="/writing/" style="font-size:0.85rem; color:var(--muted); font-weight:500; text-decoration:none;">← 双界编年史</a>
       </div>
 
-      <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.3rem 0.85rem; background:rgba(99,102,241,0.10); border:1px solid rgba(99,102,241,0.20); border-radius:9999px; font-size:0.75rem; font-weight:700; color:#6366f1; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:1.25rem; width:fit-content;">
+      <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.3rem 0.85rem; background:var(--accent-soft); border:1px solid var(--line-strong); border-radius:var(--radius); font-size:0.75rem; font-weight:700; color:var(--accent); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:1.25rem; width:fit-content;">
         Part I
       </div>
 
-      <h1 style="font-size:clamp(2.2rem, 4vw, 3.4rem); font-weight:900; line-height:1.05; margin:0 0 1rem; letter-spacing:-0.03em; color:#111827;">
+      <h1 style="font-size:clamp(2.2rem, 4vw, 3.4rem); font-weight:900; line-height:1.05; margin:0 0 1rem; letter-spacing:-0.03em; color:var(--text);">
         阳界·阿斯提摩斯
       </h1>
 
       <div style="display:flex; flex-wrap:wrap; gap:0.45rem; margin-bottom:1.75rem;">
-        <span style="padding:0.22rem 0.65rem; background:rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.08); border-radius:9999px; font-size:0.78rem; color:#6b7280; font-weight:500;">幻想</span>
-        <span style="padding:0.22rem 0.65rem; background:rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.08); border-radius:9999px; font-size:0.78rem; color:#6b7280; font-weight:500;">界后 2500 年</span>
-        <span style="padding:0.22rem 0.65rem; background:rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.08); border-radius:9999px; font-size:0.78rem; color:#6b7280; font-weight:500;">双界镜像世界</span>
-        <span style="padding:0.22rem 0.65rem; background:rgba(99,102,241,0.10); border:1px solid rgba(99,102,241,0.20); border-radius:9999px; font-size:0.78rem; color:#6366f1; font-weight:600;">连载中</span>
+        <span style="padding:0.22rem 0.65rem; background:var(--accent-soft); border:1px solid var(--line); border-radius:var(--radius); font-size:0.78rem; color:var(--muted); font-weight:500;">幻想</span>
+        <span style="padding:0.22rem 0.65rem; background:var(--accent-soft); border:1px solid var(--line); border-radius:var(--radius); font-size:0.78rem; color:var(--muted); font-weight:500;">界后 2500 年</span>
+        <span style="padding:0.22rem 0.65rem; background:var(--accent-soft); border:1px solid var(--line); border-radius:var(--radius); font-size:0.78rem; color:var(--muted); font-weight:500;">双界镜像世界</span>
+        <span style="padding:0.22rem 0.65rem; background:var(--accent-soft); border:1px solid var(--line-strong); border-radius:var(--radius); font-size:0.78rem; color:var(--accent); font-weight:600;">连载中</span>
       </div>
 
-      <div style="display:grid; gap:0.35rem; margin-bottom:2rem; padding:0.9rem 1.1rem; background:rgba(255,255,255,0.65); backdrop-filter:blur(14px); border:1px solid rgba(0,0,0,0.07); border-radius:0.85rem; font-size:0.85rem; max-width:380px;">
-        <div style="display:flex; gap:1rem;"><span style="color:#9ca3af; min-width:5.5rem;">主创</span><span style="color:#374151; font-weight:500;">卿源</span></div>
-        <div style="display:flex; gap:1rem;"><span style="color:#9ca3af; min-width:5.5rem;">主编</span><span style="color:#374151; font-weight:500;">茶惹酒烬</span></div>
-        <div style="display:flex; gap:1rem;"><span style="color:#9ca3af; min-width:5.5rem;">设定集</span><span style="color:#374151; font-weight:500;">卿源，茶惹酒烬</span></div>
-        <div style="display:flex; gap:1rem;"><span style="color:#9ca3af; min-width:5.5rem;">设定图生成</span><span style="color:#374151; font-weight:500;">ChatGPT</span></div>
-        <div style="display:flex; gap:1rem;"><span style="color:#9ca3af; min-width:5.5rem;">设定集整理</span><span style="color:#374151; font-weight:500;">ChatGPT，Claude</span></div>
+      <div style="display:grid; gap:0.35rem; margin-bottom:2rem; padding:0.9rem 1.1rem; background:var(--surface);  border:1px solid var(--line); border-radius:0.85rem; font-size:0.85rem; max-width:380px;">
+        <div style="display:flex; gap:1rem;"><span style="color:var(--faint); min-width:5.5rem;">主创</span><span style="color:var(--text-2); font-weight:500;">卿源</span></div>
+        <div style="display:flex; gap:1rem;"><span style="color:var(--faint); min-width:5.5rem;">主编</span><span style="color:var(--text-2); font-weight:500;">茶惹酒烬</span></div>
+        <div style="display:flex; gap:1rem;"><span style="color:var(--faint); min-width:5.5rem;">设定集</span><span style="color:var(--text-2); font-weight:500;">卿源，茶惹酒烬</span></div>
+        <div style="display:flex; gap:1rem;"><span style="color:var(--faint); min-width:5.5rem;">设定图生成</span><span style="color:var(--text-2); font-weight:500;">ChatGPT</span></div>
+        <div style="display:flex; gap:1rem;"><span style="color:var(--faint); min-width:5.5rem;">设定集整理</span><span style="color:var(--text-2); font-weight:500;">ChatGPT，Claude</span></div>
       </div>
 
       <a href="https://www.qidian.com/book/1048636809/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width:fit-content;">
@@ -43,18 +43,10 @@ import Layout from '../../layouts/Layout.astro';
 
     </div>
 
-    <!-- Diagonal accent stripe -->
-    <div style="
-      position:absolute; left:calc(50% - 48px); top:0; bottom:0; width:96px; z-index:3;
-      background:linear-gradient(135deg, rgba(99,102,241,0.18) 0%, rgba(168,85,247,0.12) 100%);
-      transform:skewX(-4deg);
-      pointer-events:none;
-    "></div>
-
     <!-- Right half: image -->
     <div style="flex:1; position:relative; overflow:hidden; clip-path:polygon(6% 0%, 100% 0%, 100% 100%, 0% 100%);">
       <!-- Blend gradient on left edge -->
-      <div style="position:absolute; left:0; top:0; bottom:0; width:30%; z-index:2; background:linear-gradient(to right, #e8eaf6 0%, transparent 100%); pointer-events:none;"></div>
+      <div style="position:absolute; left:0; top:0; bottom:0; width:30%; z-index:2; background:linear-gradient(to right, var(--bg) 0%, transparent 100%); pointer-events:none;"></div>
 
       <img
         src="/novel/images/第一部宣传图.png"

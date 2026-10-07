@@ -18,16 +18,16 @@ const { Content } = await render(entry);
 <Layout title={`${entry.data.title} | 设定集`}>
   <main class="page-main">
     <div style="margin-bottom: 1.5rem; display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
-      <a href="/writing/" style="font-size:0.88rem; color:#6b7280; font-weight:500;">写作</a>
-      <span style="color:#d1d5db;">›</span>
-      <a href="/writing/lore/" style="font-size:0.88rem; color:#6b7280; font-weight:500;">设定集</a>
-      <span style="color:#d1d5db;">›</span>
-      <span style="font-size:0.88rem; color:#374151;">{entry.data.title}</span>
+      <a href="/writing/" style="font-size:0.88rem; color:var(--muted); font-weight:500;">写作</a>
+      <span style="color:var(--line-strong);">›</span>
+      <a href="/writing/lore/" style="font-size:0.88rem; color:var(--muted); font-weight:500;">设定集</a>
+      <span style="color:var(--line-strong);">›</span>
+      <span style="font-size:0.88rem; color:var(--text-2);">{entry.data.title}</span>
     </div>
 
     <WritingSearch placeholder="搜索设定集内容……" />
 
-    <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.3rem 0.8rem; background:rgba(99,102,241,0.10); border:1px solid rgba(99,102,241,0.18); border-radius:9999px; font-size:0.78rem; font-weight:500; color:#6366f1; margin-bottom:1.75rem;">
+    <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.3rem 0.8rem; background:var(--accent-soft); border:1px solid var(--line-strong); border-radius:var(--radius); font-size:0.78rem; font-weight:500; color:var(--accent); margin-bottom:1.75rem;">
       {entry.data.category}
     </div>
 
